@@ -1,6 +1,6 @@
-package src.java.com.repository;
+package src.main.java.com.repository;
 
-import src.java.com.model.Listing;
+import src.main.java.com.model.Listing;
 import java.util.List;
 
 public interface IListingRepository {

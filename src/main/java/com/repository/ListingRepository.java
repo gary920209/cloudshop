@@ -1,7 +1,8 @@
-package src.java.com.repository;
+package src.main.java.com.repository;
 
 import java.util.*;
-import src.java.com.model.Listing;
+import java.util.stream.Collectors;
+import src.main.java.com.model.Listing;
 
 public class ListingRepository implements IListingRepository {
     private final Map<Integer, Listing> listings = new HashMap<>();
@@ -9,7 +10,7 @@ public class ListingRepository implements IListingRepository {
 
     @Override
     public int add(String title, String description, double price, String username, String category) {
-        int listingId = listings.size() + 1;
+        int listingId = listings.size() + 100001;
         Listing listing = new Listing(listingId, title, description, price, username, category);
         listings.put(listingId, listing);
         categoryListings.computeIfAbsent(category, k -> new ArrayList<>()).add(listingId);
@@ -64,10 +65,18 @@ public class ListingRepository implements IListingRepository {
         if (categoryListings.isEmpty()) {
             return null;
         }
-        return categoryListings.entrySet().stream()
-                .max(Comparator.comparingInt(e -> e.getValue().size()))
+        int max_size = categoryListings.values().stream()
+                .mapToInt(List::size)
+                .max()
+                .orElse(0);
+
+        List<String> topCategories = categoryListings.entrySet().stream()
+                .filter(entry -> entry.getValue().size() == max_size)
                 .map(Map.Entry::getKey)
-                .orElse(null);
+                .sorted()
+                .collect(Collectors.toList());
+
+        return String.join(", ", topCategories);
     }
 
 }

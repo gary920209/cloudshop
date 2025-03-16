@@ -1,6 +1,6 @@
-package src.java.com.command;
+package src.main.java.com.command;
 
-import src.java.com.service.Service;
+import src.main.java.com.service.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -30,6 +30,12 @@ public class Command{
         else if(cmd.equals("GET_LISTING") && parts.size() == 3){
             return service.getListing(parts.get(1), Integer.parseInt(parts.get(2)));
         }
+        else if(cmd.equals("GET_CATEGORY") && parts.size() == 3){
+            return service.getCategory(parts.get(1), parts.get(2));
+        }
+        else if(cmd.equals("GET_TOP_CATEGORY") && parts.size() == 2){
+            return service.getTopCategory(parts.get(1));
+        }
 
         return "Error - invalid command";
     }
@@ -41,5 +47,4 @@ public class Command{
         }
         return parts;    
     }
-    
 }

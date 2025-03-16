@@ -1,6 +1,6 @@
-package src.java.com.repository;
+package src.main.java.com.repository;
 
-import src.java.com.model.User;
+import src.main.java.com.model.User;
 
 public interface IUserRepository {
     boolean add(User user);

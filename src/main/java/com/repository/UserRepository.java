@@ -1,8 +1,8 @@
-package src.java.com.repository;
+package src.main.java.com.repository;
 
 import java.util.HashMap;
 import java.util.Map;
-import src.java.com.model.User;
+import src.main.java.com.model.User;
 
 public class UserRepository implements IUserRepository{
     private final Map<String, User> users = new HashMap<>();

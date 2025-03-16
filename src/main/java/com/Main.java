@@ -1,9 +1,9 @@
-package src.java.com;
+package src.main.java.com;
 
-import src.java.com.command.Command;
-import src.java.com.repository.ListingRepository;
-import src.java.com.repository.UserRepository;
-import src.java.com.service.Service;
+import src.main.java.com.command.Command;
+import src.main.java.com.repository.ListingRepository;
+import src.main.java.com.repository.UserRepository;
+import src.main.java.com.service.Service;
 
 import java.util.NoSuchElementException;
 import java.util.Scanner;

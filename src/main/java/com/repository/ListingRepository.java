@@ -9,7 +9,7 @@ public class ListingRepository implements IListingRepository {
     private final Map<String, List<Integer>> categoryListings = new HashMap<>();
 
     @Override
-    public int add(String title, String description, double price, String username, String category) {
+    public int add(String title, String description, int price, String username, String category) {
         int listingId = listings.size() + 100001;
         Listing listing = new Listing(listingId, title, description, price, username, category);
         listings.put(listingId, listing);

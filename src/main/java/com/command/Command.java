@@ -1,10 +1,10 @@
 package src.main.java.com.command;
 
-import src.main.java.com.service.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import src.main.java.com.service.Service;
 
 public class Command{
     private final Service service;
@@ -22,7 +22,7 @@ public class Command{
             return service.registerUser(parts.get(1));
         }
         else if (cmd.equals("CREATE_LISTING") && parts.size() == 6) {
-            return service.createListing(parts.get(1), parts.get(2), parts.get(3), Double.parseDouble(parts.get(4)), parts.get(5));
+            return service.createListing(parts.get(1), parts.get(2), parts.get(3), Integer.parseInt(parts.get(4)), parts.get(5));
         }
         else if(cmd.equals("DELETE_LISTING") && parts.size() == 3){
             return service.deleteListing(parts.get(1), Integer.parseInt(parts.get(2)));

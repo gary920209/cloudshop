@@ -16,13 +16,13 @@ public class Listing {
     private final int id;
     private final String title;
     private final String description;
-    private final double price;
+    private final int price;
     private final String username;
     private final String category;
     private final String createdAt;
     private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
-    public Listing(int id, String title, String description, double price, String username, String category) {
+    public Listing(int id, String title, String description, int price, String username, String category) {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -44,7 +44,7 @@ public class Listing {
         return description;
     }
 
-    public double getPrice() {
+    public int getPrice() {
         return price;
     }
 

@@ -25,7 +25,7 @@ public class Service{
     }
     // CREATE_LISTING <username> <title> <description> <price> <category>
     public String createListing(String username, String title, String description, 
-                               double price, String category){
+                               int price, String category){
         User user = userRepository.get(username);
         if (user == null) {
             return "Error - unknown user";

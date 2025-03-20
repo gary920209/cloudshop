@@ -1,13 +1,11 @@
 package src.main.java.com;
 
+import java.util.NoSuchElementException;
+import java.util.Scanner;
 import src.main.java.com.command.Command;
 import src.main.java.com.repository.ListingRepository;
 import src.main.java.com.repository.UserRepository;
 import src.main.java.com.service.Service;
-
-import java.util.NoSuchElementException;
-import java.util.Scanner;
-
 
 public class Main {
     public static void main(String[] args) {
@@ -20,12 +18,17 @@ public class Main {
         // Scanner for reading from STDIN
         Scanner scanner = new Scanner(System.in);
 
+        // Check if running in interactive mode
+        boolean isInteractive = System.console() != null;
+
         // Main application loop
         while (true) {
             try {
-                // Print prompt
-                System.out.print("# ");
-                System.out.flush();
+                // Print prompt only in interactive mode
+                if (isInteractive) {
+                    System.out.print("# ");
+                    System.out.flush();
+                }
 
                 // Check if there is input available
                 if (!scanner.hasNextLine()) {

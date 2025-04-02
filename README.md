@@ -1,4 +1,4 @@
-# CloudShop
+# CloudShop (NTUCSIE CNA HW)
 
 A lightweight online marketplace system with command-line interface.
 

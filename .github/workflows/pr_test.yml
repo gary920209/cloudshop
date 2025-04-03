@@ -26,8 +26,8 @@ jobs:
           java -version
           mvn -version
 
-      - name: Grant execute permission for build.sh
-        run: chmod +x build.sh 
+      - name: Grant execute permission for scripts
+        run: chmod +x build.sh user_test.sh listing_test.sh
 
       - name: Run build script
         run: ./build.sh  

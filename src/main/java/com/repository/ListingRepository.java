@@ -1,7 +1,13 @@
 package src.main.java.com.repository;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
+
 import src.main.java.com.model.Listing;
 
 public class ListingRepository implements IListingRepository {
@@ -10,7 +16,7 @@ public class ListingRepository implements IListingRepository {
 
     @Override
     public int add(String title, String description, int price, String username, String category) {
-        int listingId = listings.size() + 100001;
+        int listingId = listings.size();
         Listing listing = new Listing(listingId, title, description, price, username, category);
         listings.put(listingId, listing);
         categoryListings.computeIfAbsent(category, k -> new ArrayList<>()).add(listingId);

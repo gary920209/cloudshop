@@ -3,7 +3,7 @@
 CLI_CMD="java -cp target/classes src.main.java.com.Main"
 
 # Test 1: Register user
-OUTPUT=$($CLI_CMD REGISTER user1)
+OUTPUT=$(echo "REGISTER user1" | $CLI_CMD)
 EXPECTED="Success"
 if [ "$OUTPUT" == "$EXPECTED" ]; then
     echo "✅ REGISTER test passed"

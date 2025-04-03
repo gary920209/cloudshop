@@ -33,7 +33,7 @@ jobs:
         run: ./build.sh  
 
       - name: Run Build Script (Auto Answer Input)
-        run: echo -e "y\nsrc.main.java.com.Main" | ./build.sh
+        run: echo -e "y" | ./build.sh
 
       - name: Run tests
         run: mvn test  

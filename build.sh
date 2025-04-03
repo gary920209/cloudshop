@@ -25,7 +25,8 @@ if command -v mvn &>/dev/null; then
     # Ask if user wants to run the project
     read -p "Do you want to run the project using Maven? (y/n): " run_option
     if [ "$run_option" = "y" ]; then
-        read -p "Enter the main class (e.g., com.example.App): " main_class
+        main_class="src.main.java.com.Main"
+        echo "Using default main class: $main_class"
         mvn exec:java -Dexec.mainClass="$main_class"
     fi
 else

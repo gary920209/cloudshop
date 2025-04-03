@@ -32,11 +32,8 @@ jobs:
       - name: Run build script
         run: ./build.sh  
 
-      - name: Grant execute permission for run.sh
-        run: chmod +x run.sh 
-
-      - name: Run run script
-        run: ./run.sh  
+      - name: Run Build Script (Auto Answer Input)
+        run: echo -e "y\nsrc.main.java.com.Main" | ./build.sh
 
       - name: Run tests
         run: mvn test  

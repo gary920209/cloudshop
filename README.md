@@ -84,12 +84,11 @@ The application uses H2 Database for data persistence. Database files are automa
 
 ## Scripts
 
-- `build.sh`: Compiles the application and resolves dependencies
-- `run.sh`: Starts the CloudShop application
+- `build.sh`: Compiles the application and resolves dependencies, and then tarts the CloudShop application.
 
-Make sure both scripts have execution permissions:
+Make sure script have execution permissions:
 ```
-chmod +x build.sh run.sh
+chmod +x build.sh 
 ```
 
 ## License

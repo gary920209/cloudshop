@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CLI_CMD="java -cp target/classes com.example.App"
+CLI_CMD="java -cp target/classes src.main.java.com.Main"
 
 # Test 1: Register user
 OUTPUT=$($CLI_CMD REGISTER user1)

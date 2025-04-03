@@ -2,6 +2,7 @@ package src.main.java.com;
 
 import java.util.NoSuchElementException;
 import java.util.Scanner;
+
 import src.main.java.com.command.Command;
 import src.main.java.com.repository.ListingRepository;
 import src.main.java.com.repository.UserRepository;
@@ -24,12 +25,6 @@ public class Main {
         // Main application loop
         while (true) {
             try {
-                // Print prompt only in interactive mode
-                if (isInteractive) {
-                    System.out.print("# ");
-                    System.out.flush();
-                }
-
                 // Check if there is input available
                 if (!scanner.hasNextLine()) {
                     break;

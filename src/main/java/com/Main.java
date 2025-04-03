@@ -25,6 +25,12 @@ public class Main {
         // Main application loop
         while (true) {
             try {
+                // Print prompt only in interactive mode
+                if (isInteractive) {
+                    System.out.print("# ");
+                    System.out.flush();
+                }
+
                 // Check if there is input available
                 if (!scanner.hasNextLine()) {
                     break;

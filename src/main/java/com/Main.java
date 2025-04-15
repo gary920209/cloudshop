@@ -2,6 +2,7 @@ package src.main.java.com;
 
 import java.util.NoSuchElementException;
 import java.util.Scanner;
+
 import src.main.java.com.command.Command;
 import src.main.java.com.repository.ListingRepository;
 import src.main.java.com.repository.UserRepository;
